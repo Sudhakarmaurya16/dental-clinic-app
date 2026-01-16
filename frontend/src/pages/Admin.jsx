@@ -34,7 +34,7 @@ const Admin = () => {
   // Fetch Data
   const fetchAppointments = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/appointments", {
+      const res = await axios.get("https://dental-clinic-app-ptz8.onrender.com/api/appointments", {
         headers: { Authorization: token },
       });
       setAppointments(res.data);
@@ -53,7 +53,7 @@ const Admin = () => {
     setLoading(true);
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://dental-clinic-app-ptz8.onrender.com/api/auth/login",
         loginData
       );
       login(res.data.token);
@@ -69,7 +69,7 @@ const Admin = () => {
   const updateStatus = async (id, status) => {
     try {
       await axios.put(
-        `http://localhost:5000/api/appointments/${id}`,
+        `https://dental-clinic-app-ptz8.onrender.com/api/appointments/${id}`,
         { status },
         { headers: { Authorization: token } }
       );
@@ -83,7 +83,7 @@ const Admin = () => {
   const deleteAppt = async (id) => {
     if (!window.confirm("Are you sure you want to delete this record?")) return;
     try {
-      await axios.delete(`http://localhost:5000/api/appointments/${id}`, {
+      await axios.delete(`https://dental-clinic-app-ptz8.onrender.com/api/appointments/${id}`, {
         headers: { Authorization: token },
       });
       fetchAppointments();

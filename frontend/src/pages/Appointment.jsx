@@ -77,7 +77,7 @@ const Appointment = () => {
 
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/appointments/booked-slots?date=${selectedDate}`
+        `https://dental-clinic-app-ptz8.onrender.com/api/appointments/booked-slots?date=${selectedDate}`
       );
       setBookedSlots(res.data);
     } catch (err) {
@@ -104,7 +104,7 @@ const Appointment = () => {
     setLoading(true);
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/appointments",
+        "https://dental-clinic-app-ptz8.onrender.com/api/appointments",
         formData
       );
       setConfirmedData(res.data);
