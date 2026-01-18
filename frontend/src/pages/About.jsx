@@ -20,8 +20,8 @@ const About = () => {
     {
       id: 1,
       name: "Dr. kuldeep krishn maurya (BDS kgmu)",
-      role: "Senior Orthodontist",
-      exp: "3+ Years Exp",
+      role: "Senior Consultant",
+      exp: "5+ Years Exp",
       image: Dr,
       specialty: "Oral and dental surgeon",
       color: "blue",
