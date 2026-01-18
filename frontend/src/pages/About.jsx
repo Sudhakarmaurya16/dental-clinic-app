@@ -19,7 +19,7 @@ const About = () => {
   const doctors = [
     {
       id: 1,
-      name: "Dr. kuldeep krishn maurya (BDS kgmu)",
+      name: "Dr. Kuldeep Krishn Maurya (BDS KGMU Lucknow)",
       role: "Senior Consultant",
       exp: "5+ Years Exp",
       image: Dr,
@@ -28,7 +28,7 @@ const About = () => {
     },
     {
       id: 2,
-      name: "Dr. said zafar( Bds'mds)",
+      name: "Dr. Said Zafar( Bds'mds)",
       role: "Orthodontics ",
       exp: "12+ Years Exp",
       image: "",

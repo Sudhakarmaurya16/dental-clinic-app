@@ -111,7 +111,9 @@ const Footer = () => {
               <li className="flex gap-3 text-slate-400 text-sm">
                 <MapPin size={20} className="text-cyan-500 shrink-0" />
                 <span>
-                  123, Wellness Avenue, <br /> Mumbai, India - 400001
+                  K K Dental Clinic Near RTO Office Road, (300 meters inside
+                  from Nedula Churaha), Khalilabad, Distt. Sant Kabir Nagar,
+                  Uttar Pradesh - 272175
                 </span>
               </li>
               <li className="flex gap-3 text-slate-400 text-sm">
