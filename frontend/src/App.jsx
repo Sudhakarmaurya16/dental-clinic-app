@@ -6,7 +6,8 @@ import Appointment from "./pages/Appointment";
 import Admin from "./pages/Admin";
 import About from "./pages/About";
 import Services from "./pages/Services";
-import Contact from "./pages/Contact"; // <--- 1. NEW: Real Contact Page Import kiya
+import Contact from "./pages/Contact";
+import ServiceDetail from "./pages/ServiceDetail"; // ✅ Import ServiceDetail
 import { AuthProvider } from "./context/AuthContext";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -23,10 +24,11 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/appointment" element={<Appointment />} />
             <Route path="/admin" element={<Admin />} />
+            {/* Services Routes */}
             <Route path="/services" element={<Services />} />
+            <Route path="/services/:id" element={<ServiceDetail />} />{" "}
+            {/* ✅ Dynamic 3D Detail Page */}
             <Route path="/about" element={<About />} />
-
-            {/* 2. Ab yeh Asli 3D Contact Page dikhayega */}
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>

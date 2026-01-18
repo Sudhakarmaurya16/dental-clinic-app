@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Dr from "../assets/dr.jpeg";
 import {
   Award,
   Users,
@@ -18,31 +19,28 @@ const About = () => {
   const doctors = [
     {
       id: 1,
-      name: "Dr. Rajesh Verma",
+      name: "Dr. kuldeep krishn maurya (BDS kgmu)",
       role: "Senior Orthodontist",
-      exp: "15+ Years Exp",
-      image:
-        "https://img.freepik.com/free-photo/portrait-smiling-handsome-male-doctor-man_171337-5055.jpg?w=800",
-      specialty: "Braces & Aligners",
+      exp: "3+ Years Exp",
+      image: Dr,
+      specialty: "Oral and dental surgeon",
       color: "blue",
     },
     {
       id: 2,
-      name: "Dr. Anjali Mehta",
-      role: "Cosmetic Surgeon",
+      name: "Dr. said zafar( Bds'mds)",
+      role: "Orthodontics ",
       exp: "12+ Years Exp",
-      image:
-        "https://img.freepik.com/free-photo/pleased-young-female-doctor-wearing-medical-robe-stethoscope-around-neck-standing-with-closed-posture_409827-254.jpg?w=800",
+      image: "",
       specialty: "Smile Makeovers",
       color: "purple",
     },
     {
       id: 3,
-      name: "Dr. Sameer Khan",
+      name: "Dr. Ashish (BDS)",
       role: "Implantologist",
       exp: "10+ Years Exp",
-      image:
-        "https://img.freepik.com/free-photo/doctor-with-his-arms-crossed-white-background_1368-5790.jpg?w=800",
+      image: "",
       specialty: "Dental Implants",
       color: "cyan",
     },

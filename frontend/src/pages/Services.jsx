@@ -1,263 +1,148 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
-  Stethoscope,
-  Sparkles,
-  ShieldCheck,
-  Smile,
-  Activity,
-  Baby,
-  ArrowRight,
   X,
-  Clock,
   CheckCircle,
+  Clock,
   Banknote,
+  ShieldCheck,
+  Award,
+  Droplet,
+  Microscope,
 } from "lucide-react";
+import { servicesData } from "../data/servicesData";
+import ServiceCard from "../components/ServiceCard";
 
 const Services = () => {
+  // Modal state ki ab zaroorat nahi hai agar aap direct page par bhej rahe hain,
+  // lekin maine ise rakha hai agar aap future mein use karna chahein.
   const [selectedService, setSelectedService] = useState(null);
 
-  // Expanded Data with details for Popup
-  const servicesList = [
-    {
-      id: 1,
-      title: "General Dentistry",
-      shortDesc: "Routine checkups, scaling, cleaning, and fillings.",
-      fullDesc:
-        "Our General Dentistry services focus on preventative care to maintain your oral hygiene. We recommend a checkup every 6 months to catch issues early.",
-      benefits: [
-        "Prevents Cavities",
-        "Gum Disease Prevention",
-        "Fresh Breath",
-        "Plaque Removal",
-      ],
-      duration: "30 - 45 Mins",
-      price: "₹500 - ₹1500",
-      icon: <Stethoscope size={40} />,
-      color: "bg-blue-100 text-blue-600",
-    },
-    {
-      id: 2,
-      title: "Teeth Whitening",
-      shortDesc: "Advanced laser whitening to brighten your smile instantly.",
-      fullDesc:
-        "Using safe and effective laser technology, we remove years of stains caused by coffee, tea, and aging. Get a dazzling smile in just one session.",
-      benefits: [
-        "Instant Results",
-        "Safe for Enamel",
-        "Long-lasting White",
-        "Boosts Confidence",
-      ],
-      duration: "60 Mins",
-      price: "₹5000 - ₹8000",
-      icon: <Sparkles size={40} />,
-      color: "bg-yellow-100 text-yellow-600",
-    },
-    {
-      id: 3,
-      title: "Root Canal Treatment",
-      shortDesc: "Painless therapy to save infected teeth instantly.",
-      fullDesc:
-        "Don't extract your tooth! Our painless Root Canal Treatment removes infection from deep inside the tooth and seals it to prevent future pain.",
-      benefits: [
-        "Saves Natural Tooth",
-        "Relieves Pain Instantly",
-        "Prevents Infection Spread",
-        "Painless Procedure",
-      ],
-      duration: "2 Sittings (45 Mins each)",
-      price: "₹3000 - ₹6000",
-      icon: <Activity size={40} />,
-      color: "bg-red-100 text-red-600",
-    },
-    {
-      id: 4,
-      title: "Dental Implants",
-      shortDesc: "Permanent solution for missing teeth with titanium implants.",
-      fullDesc:
-        "Implants are the gold standard for replacing missing teeth. They look, feel, and function exactly like your natural teeth.",
-      benefits: [
-        "Lifetime Durability",
-        "Prevents Bone Loss",
-        "Natural Look",
-        "No Damage to Nearby Teeth",
-      ],
-      duration: "3 - 6 Months Process",
-      price: "₹20,000+",
-      icon: <ShieldCheck size={40} />,
-      color: "bg-green-100 text-green-600",
-    },
-    {
-      id: 5,
-      title: "Cosmetic Dentistry",
-      shortDesc: "Smile makeovers, veneers, and bonding for perfect alignment.",
-      fullDesc:
-        "Transform your smile with veneers, bonding, and contouring. We design a smile that fits your face perfectly using Digital Smile Design.",
-      benefits: [
-        "Fixes Gaps",
-        "Corrects Alignment",
-        "Hides Chips/Cracks",
-        "Hollywood Smile",
-      ],
-      duration: "1 - 2 Weeks",
-      price: "Consultation Required",
-      icon: <Smile size={40} />,
-      color: "bg-purple-100 text-purple-600",
-    },
-    {
-      id: 6,
-      title: "Kids Dentistry",
-      shortDesc: "Friendly and gentle dental care specifically for children.",
-      fullDesc:
-        "We create a fun and fear-free environment for kids. From fluoride treatments to cavity fillings, we ensure your child loves visiting the dentist.",
-      benefits: [
-        "Pain-free Techniques",
-        "Habit Counseling",
-        "Fluoride Protection",
-        "Friendly Environment",
-      ],
-      duration: "30 Mins",
-      price: "₹400 - ₹1000",
-      icon: <Baby size={40} />,
-      color: "bg-pink-100 text-pink-600",
-    },
-  ];
+  useEffect(() => {
+    document.body.style.overflow = selectedService ? "hidden" : "unset";
+  }, [selectedService]);
 
   return (
-    <div className="min-h-screen bg-white relative">
-      {/* 1. Hero Header */}
-      <div className="bg-cyan-50 py-16 text-center px-4">
-        <h1 className="text-4xl font-extrabold text-gray-800 mb-4">
-          World-Class <span className="text-cyan-600">Dental Services</span>
-        </h1>
-        <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-          Click on any service below to view detailed procedures, pricing, and
-          benefits.
-        </p>
-      </div>
-
-      {/* 2. Services Grid */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {servicesList.map((service) => (
-            <div
-              key={service.id}
-              onClick={() => setSelectedService(service)} // CLICK TRIGGER
-              className="bg-white p-8 rounded-2xl shadow-md border border-gray-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 group cursor-pointer"
-            >
-              <div
-                className={`w-16 h-16 rounded-full flex items-center justify-center mb-6 ${service.color}`}
-              >
-                {service.icon}
-              </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-3 group-hover:text-cyan-600 transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-gray-500 mb-6 leading-relaxed">
-                {service.shortDesc}
-              </p>
-              <button className="inline-flex items-center text-cyan-600 font-semibold hover:gap-2 transition-all">
-                View Details <ArrowRight size={18} className="ml-2" />
-              </button>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* 3. Call to Action */}
-      <div className="bg-gradient-to-r from-cyan-600 to-blue-600 py-16">
-        <div className="container mx-auto px-4 text-center text-white">
-          <h2 className="text-3xl font-bold mb-4">Need Expert Advice?</h2>
+    <div className="min-h-screen bg-slate-50 font-sans pt-20">
+      {/* 1. HERO SECTION */}
+      <section className="relative py-20 bg-white overflow-hidden text-center px-6">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-sky-50/50 -z-10 blur-3xl" />
+        <div className="max-w-4xl mx-auto">
+          <h1 className="text-5xl md:text-7xl font-black text-slate-800 mb-6 tracking-tight">
+            Our Dental <span className="text-sky-600">Services</span>
+          </h1>
+          <p className="text-slate-500 text-xl font-medium mb-10 leading-relaxed">
+            Advanced dental care for a healthy and confident smile.
+          </p>
           <Link
-            to="/contact"
-            className="bg-white text-cyan-700 px-8 py-3 rounded-full font-bold shadow-lg hover:bg-gray-100 transition"
+            to="/appointment"
+            className="inline-block bg-sky-600 text-white px-10 py-5 rounded-2xl font-black text-lg shadow-xl shadow-sky-200 hover:bg-sky-500 hover:-translate-y-1 transition-all"
           >
-            Contact Support
+            Book Appointment
           </Link>
         </div>
-      </div>
+      </section>
 
-      {/* ================= POPUP MODAL ================= */}
+      {/* 2. SERVICES GRID (FIXED WITH LINKS) */}
+      <section className="container mx-auto px-6 py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {servicesData.map((service) => (
+            <Link
+              key={service.id}
+              to={`/services/${service.id}`}
+              className="group block"
+            >
+              <ServiceCard
+                service={service}
+                // onClick logic ab page redirect sambhal lega
+                onClick={() => {}}
+              />
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* 3. WHY CHOOSE US */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-6 text-center">
+          <h2 className="text-4xl font-black text-slate-800 mb-16">
+            Why Choose Our Clinic
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+            {[
+              {
+                icon: Award,
+                text: "Experienced Dentists",
+                color: "text-blue-500",
+              },
+              {
+                icon: Microscope,
+                text: "Modern Equipment",
+                color: "text-emerald-500",
+              },
+              {
+                icon: ShieldCheck,
+                text: "Hygienic & Safe",
+                color: "text-sky-500",
+              },
+              {
+                icon: Droplet,
+                text: "Affordable Treatment",
+                color: "text-teal-500",
+              },
+            ].map((item, i) => (
+              <div key={i} className="flex flex-col items-center group">
+                <div
+                  className={`p-6 rounded-3xl bg-slate-50 mb-4 group-hover:bg-sky-50 transition-colors`}
+                >
+                  <item.icon size={48} className={item.color} />
+                </div>
+                <p className="text-lg font-bold text-slate-700">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 4. CALL TO ACTION */}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto bg-slate-900 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
+          <h2 className="text-3xl md:text-5xl font-black text-white mb-8">
+            Need a perfect smile? <br />
+            Book your appointment today.
+          </h2>
+          <Link
+            to="/appointment"
+            className="bg-sky-500 text-white px-12 py-5 rounded-full font-black text-xl hover:bg-sky-400 transition-all shadow-lg shadow-sky-500/20"
+          >
+            Book Appointment
+          </Link>
+        </div>
+      </section>
+
+      {/* MODAL POPUP (KEEPS AS BACKUP IF NEEDED) */}
       {selectedService && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fadeIn">
-          <div className="bg-white rounded-3xl w-full max-w-2xl shadow-2xl overflow-hidden relative animate-scaleUp">
-            {/* Close Button */}
+        <div className="fixed inset-0 z-[1000] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md">
+          <div className="bg-white rounded-[3rem] w-full max-w-2xl shadow-2xl overflow-hidden relative animate-in zoom-in-95 duration-300">
             <button
               onClick={() => setSelectedService(null)}
-              className="absolute top-4 right-4 bg-gray-100 p-2 rounded-full hover:bg-red-100 hover:text-red-500 transition"
+              className="absolute top-6 right-6 p-3 rounded-full bg-slate-100 hover:bg-red-50 transition-colors"
             >
               <X size={24} />
             </button>
-
-            {/* Modal Header */}
-            <div
-              className={`${selectedService.color} p-8 flex items-center gap-4`}
-            >
-              <div className="bg-white/80 p-3 rounded-full shadow-sm">
-                {selectedService.icon}
-              </div>
-              <h2 className="text-3xl font-bold text-gray-900">
+            <div className="p-10">
+              <h3 className="text-4xl font-black text-slate-800 mb-4">
                 {selectedService.title}
-              </h2>
-            </div>
-
-            {/* Modal Body */}
-            <div className="p-8 space-y-6">
-              <p className="text-gray-600 text-lg leading-relaxed">
+              </h3>
+              <p className="text-lg text-slate-500 mb-8">
                 {selectedService.fullDesc}
               </p>
-
-              {/* Info Grid (Duration & Price) */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-gray-50 p-4 rounded-xl flex items-center gap-3">
-                  <Clock className="text-cyan-600" />
-                  <div>
-                    <p className="text-xs text-gray-500 font-bold uppercase">
-                      Duration
-                    </p>
-                    <p className="font-semibold text-gray-800">
-                      {selectedService.duration}
-                    </p>
-                  </div>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-xl flex items-center gap-3">
-                  <Banknote className="text-green-600" />
-                  <div>
-                    <p className="text-xs text-gray-500 font-bold uppercase">
-                      Estimated Cost
-                    </p>
-                    <p className="font-semibold text-gray-800">
-                      {selectedService.price}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Benefits List */}
-              <div>
-                <h4 className="font-bold text-gray-800 mb-3">Key Benefits:</h4>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {selectedService.benefits.map((benefit, idx) => (
-                    <li
-                      key={idx}
-                      className="flex items-center gap-2 text-gray-600 text-sm"
-                    >
-                      <CheckCircle size={16} className="text-cyan-500" />
-                      {benefit}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Action Button */}
-              <div className="pt-4 border-t flex justify-end">
-                <Link
-                  to="/appointment"
-                  className="bg-gradient-to-r from-cyan-600 to-blue-600 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-cyan-500/30 transition-transform active:scale-95"
-                >
-                  Book This Service
-                </Link>
-              </div>
+              <Link
+                to="/appointment"
+                className="w-full inline-block text-center py-5 bg-sky-600 text-white rounded-3xl font-black text-lg"
+              >
+                Book This Service Now
+              </Link>
             </div>
           </div>
         </div>
