@@ -26,7 +26,7 @@ export const servicesData = [
       "Early Cavity Detection",
       "Fresh Breath",
     ],
-    price: "₹500 - ₹1500",
+
     icon: Stethoscope,
     color: "text-blue-500",
     bgColor: "bg-blue-50",
@@ -44,7 +44,7 @@ export const servicesData = [
       "Pain-free Process",
       "Confidence Boost",
     ],
-    price: "₹5000+",
+
     icon: Sparkles,
     color: "text-yellow-500",
     bgColor: "bg-yellow-50",
@@ -62,7 +62,7 @@ export const servicesData = [
       "Prevents Further Infection",
       "Rapid Relief",
     ],
-    price: "₹3500+",
+
     icon: Zap,
     color: "text-red-500",
     bgColor: "bg-red-50",
@@ -81,7 +81,7 @@ export const servicesData = [
       "Looks & Feels Natural",
       "Chew Comfortably",
     ],
-    price: "₹18000+",
+
     icon: ShieldCheck,
     color: "text-green-500",
     bgColor: "bg-green-50",
@@ -99,7 +99,7 @@ export const servicesData = [
       "Improved Jaw Function",
       "Digital 3D Planning",
     ],
-    price: "Starting ₹15,000",
+
     icon: Activity,
     color: "text-indigo-500",
     bgColor: "bg-indigo-50",
@@ -117,7 +117,7 @@ export const servicesData = [
       "Fluoride Treatment",
       "Habit Counseling",
     ],
-    price: "₹500 - ₹1200",
+
     icon: Baby,
     color: "text-pink-500",
     bgColor: "bg-pink-50",
