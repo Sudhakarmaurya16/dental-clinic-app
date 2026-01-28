@@ -23,7 +23,7 @@ export const treatmentCards = [
       "Laser Disinfection",
       "High Success Rate",
     ],
-    price: "₹3,500 Onwards",
+
     icon: <Zap size={32} />,
     color: "from-blue-500 to-cyan-500",
   },
@@ -45,7 +45,7 @@ export const treatmentCards = [
     fullDesc:
       "Experience the future of dentistry. Lasers are used for gum contouring, cavity removal, and faster healing with zero vibration and noise.",
     benefits: ["No Bleeding", "Faster Healing", "No Anesthesia required"],
-    price: "₹1,500 Onwards",
+
     icon: <Sparkles size={32} />,
     color: "from-indigo-500 to-blue-600",
   },
@@ -56,7 +56,7 @@ export const treatmentCards = [
     fullDesc:
       "Say goodbye to traditional braces. Clear aligners are removable, transparent, and custom-made to shift your teeth comfortably.",
     benefits: ["100% Invisible", "Removable & Easy", "Digital Planning"],
-    price: "Starting ₹40,000",
+
     icon: <Smile size={32} />,
     color: "from-purple-500 to-pink-500",
   },
@@ -67,7 +67,7 @@ export const treatmentCards = [
     fullDesc:
       "We use high-grade composite resins that bond directly to your teeth, making them stronger and restoring their original beauty.",
     benefits: ["Tooth Colored", "Strong Bonding", "Long Lasting"],
-    price: "₹800 - ₹2,500",
+
     icon: <Activity size={32} />,
     color: "from-emerald-500 to-teal-600",
   },
@@ -78,7 +78,7 @@ export const treatmentCards = [
     fullDesc:
       "Safe and surgical extraction of wisdom teeth using minimally invasive techniques to reduce post-op swelling and discomfort.",
     benefits: ["Surgical Expertise", "Painless Extraction", "Post-Op Care"],
-    price: "₹2,500 - ₹6,000",
+
     icon: <HeartPulse size={32} />,
     color: "from-rose-500 to-orange-500",
   },
@@ -89,7 +89,7 @@ export const treatmentCards = [
     fullDesc:
       "Restore your confidence with titanium implants. A permanent, root-like structure that supports lifelong artificial teeth.",
     benefits: ["Lifetime Solution", "Look & Feel Natural", "Bone Preservation"],
-    price: "₹18,000 Onwards",
+
     icon: <Microscope size={32} />,
     color: "from-amber-500 to-yellow-600",
   },
@@ -100,7 +100,7 @@ export const treatmentCards = [
     fullDesc:
       "Customized flexible and traditional dentures designed for superior comfort and natural chewing function.",
     benefits: ["Flexible Options", "Lightweight", "Budget Friendly"],
-    price: "₹5,000 Onwards",
+
     icon: <ShieldCheck size={32} />,
     color: "from-slate-600 to-slate-800",
   },
