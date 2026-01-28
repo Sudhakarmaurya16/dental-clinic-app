@@ -43,10 +43,10 @@ const Navbar = () => {
           {/* Logo Text with Better Contrast */}
           <div className="flex flex-col leading-tight transition-transform duration-300 group-hover:translate-x-1">
             <span className="text-2xl font-black bg-gradient-to-r from-cyan-600 to-blue-800 bg-clip-text text-transparent tracking-tight">
-              K K Dental
+              K K Dental Clinic
             </span>
             <span className="text-[10px] tracking-[0.3em] font-bold text-blue-900/60 uppercase">
-              Clinic & Research
+              Khalilabad Nedula
             </span>
           </div>
         </Link>
