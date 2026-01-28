@@ -34,7 +34,6 @@ export const treatmentCards = [
     fullDesc:
       "We offer Zirconia and E-Max crowns that look exactly like natural teeth. Durable, biocompatible, and digitally designed for a perfect fit.",
     benefits: ["Natural Look", "15+ Year Warranty", "Digitally Scanned"],
-    price: "₹2,500 Onwards",
     icon: <Award size={32} />,
     color: "from-cyan-500 to-teal-500",
   },
